@@ -1,0 +1,552 @@
+@charset "UTF-8";
+
+/* Import Font Awesome and Google Fonts */
+@import
+	url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap")
+	;
+
+@import
+	url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+	;
+
+/* Root Variables for Consistency */
+:root {
+	--primary-color: #005f73; /* Deep teal for buttons and links */
+	--secondary-color: #0a9396; /* Lighter teal for hover states */
+	--background-color: #f8fafc; /* Light gray background */
+	--card-background: #ffffff;
+	--text-color: #1a202c; /* Dark gray for text */
+	--text-muted: #6b7280; /* Muted gray for secondary text */
+	--border-color: #e2e8f0;
+	--danger-color: #dc3545; /* Red for delete buttons */
+	--success-color: #28a745; /* Green for success alerts */
+	--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	--transition: all 0.2s ease-in-out;
+}
+
+/* General Styling for Admin Contact Messages and Message Detail */
+.admin-contact-messages, .admin-message-detail {
+	padding: 24px;
+	background-color: var(--background-color);
+	border-radius: 8px;
+	font-family: "Inter", sans-serif;
+	color: var(--text-color);
+}
+
+/* Headings */
+.admin-contact-messages h1, .admin-message-detail h1 {
+	font-size: 1.875rem; /* 30px */
+	font-weight: 700;
+	color: var(--text-color);
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 2px solid var(--border-color);
+}
+
+/* Alerts */
+.alert {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 1rem;
+	border-radius: 6px;
+	margin-bottom: 1.5rem;
+	font-size: 0.9rem;
+}
+
+.alert-success {
+	background-color: #e6ffed;
+	border: 1px solid var(--success-color);
+	color: #155724;
+}
+
+.alert-danger {
+	background-color: #fff1f2;
+	border: 1px solid var(--danger-color);
+	color: #721c24;
+}
+
+.alert i {
+	font-size: 1.2rem;
+}
+
+/* Message Counter */
+.message-counter {
+	margin-bottom: 1.25rem;
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--text-muted);
+	background-color: var(--card-background);
+	padding: 0.5rem 1rem;
+	border-radius: 6px;
+	display: inline-block;
+}
+
+/* Table Styling */
+.table-responsive {
+	overflow-x: auto;
+	margin-bottom: 1.5rem;
+}
+
+.table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	background-color: var(--card-background);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: var(--shadow);
+}
+
+.table th {
+	background-color: #f1f5f9; /* Fixed typo from #_epi */
+	color: var(--text-color);
+	padding: 1rem;
+	text-align: left;
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+}
+
+.table td {
+	padding: 1rem;
+	border-bottom: 1px solid var(--border-color);
+	font-size: 0.875rem;
+	color: var(--text-color);
+	vertical-align: middle;
+}
+
+.table tbody tr {
+	transition: var(--transition);
+}
+
+.table tbody tr:hover {
+	background-color: #f1f5f9;
+}
+
+.table .text-center {
+	text-align: center;
+}
+
+/* Email Link */
+.email-link {
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+.email-link:hover {
+	color: var(--secondary-color);
+	text-decoration: underline;
+}
+
+/* Action Buttons */
+.action-buttons {
+	display: flex;
+	gap: 0.5rem;
+	white-space: nowrap;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	border-radius: 6px;
+	text-decoration: none;
+	transition: var(--transition);
+	cursor: pointer;
+}
+
+.btn-sm {
+	padding: 0.375rem 0.75rem;
+	font-size: 0.8rem;
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+	color: #ffffff;
+	border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+}
+
+.btn-danger {
+	background-color: var(--danger-color);
+	color: #ffffff;
+	border: 1px solid var(--danger-color);
+}
+
+.btn-danger:hover {
+	background-color: #c82333;
+	border-color: #bd2130;
+}
+
+.btn-secondary {
+	background-color: var(--text-muted);
+	color: #ffffff;
+	border: 1px solid var(--text-muted);
+}
+
+.btn-secondary:hover {
+	background-color: #5a6268;
+	border-color: #545b62;
+}
+
+/* Pagination */
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+
+.pagination {
+	display: flex;
+	gap: 0.25rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.page-item .page-link {
+	padding: 0.5rem 1rem;
+	font-size: 0.875rem;
+	color: var(--primary-color);
+	background-color: var(--card-background);
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+.page-item.active .page-link {
+	background-color: var(--primary-color);
+	color: #ffffff;
+	border-color: var(--primary-color);
+}
+
+.page-item .page-link:hover {
+	background-color: #edf2f7;
+	color: var(--secondary-color);
+}
+
+.page-item.disabled .page-link {
+	color: var(--text-muted);
+	background-color: #f7fafc;
+	border-color: var(--border-color);
+	cursor: not-allowed;
+}
+
+/* Message Detail */
+.admin-message-detail .card {
+	background-color: var(--card-background);
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+	overflow: hidden;
+}
+
+.admin-message-detail .card-header {
+	background-color: #f1f5f9;
+	padding: 1.25rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.admin-message-detail .card-body {
+	padding: 1.5rem;
+}
+
+.admin-message-detail h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--text-color);
+	margin-bottom: 1rem;
+}
+
+.message-info .table {
+	width: 100%;
+	border-collapse: collapse;
+	box-shadow: none;
+}
+
+.message-info th, .message-info td {
+	padding: 0.75rem;
+	font-size: 0.875rem;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.message-info th {
+	font-weight: 600;
+	color: var(--text-muted);
+	width: 30%;
+}
+
+.message-info td {
+	color: var(--text-color);
+}
+
+.message-content .card {
+	border: 1px solid var(--border-color);
+	box-shadow: none;
+}
+
+.message-content .card-header {
+	font-weight: 500;
+	color: var(--text-color);
+	background-color: #f1f5f9;
+	padding: 0.75rem 1rem;
+}
+
+.message-content .card-body {
+	padding: 1rem;
+}
+
+.message-text {
+	white-space: pre-wrap;
+	word-break: break-word;
+	color: var(--text-color);
+	line-height: 1.6;
+	font-size: 0.9rem;
+}
+
+/* Reply Section */
+.reply-section {
+	margin-top: 2rem;
+}
+
+.reply-section .card {
+	border: 1px solid var(--border-color);
+}
+
+.reply-section .card-body {
+	padding: 1rem;
+}
+
+.reply-section .form-group {
+	margin-bottom: 1rem;
+}
+
+.reply-section textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	font-size: 0.875rem;
+	color: var(--text-color);
+	resize: vertical;
+	min-height: 120px;
+	transition: var(--transition);
+}
+
+.reply-section textarea:focus {
+	border-color: var(--primary-color);
+	box-shadow: 0 0 0 3px rgba(0, 95, 115, 0.1);
+	outline: none;
+}
+
+.reply-section .btn-primary {
+	margin-top: 0.5rem;
+}
+
+/* Modal Styling */
+.custom-modal {
+	display: none; /* Hidden by default */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+	overflow: auto;
+}
+
+.custom-modal.show {
+	display: flex; /* Show modal when 'show' class is added */
+}
+
+.custom-modal-content {
+	background-color: var(--card-background);
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+	max-width: 500px;
+	width: 90%;
+	margin: 1rem;
+	animation: fadeIn 0.3s ease-out;
+}
+
+.custom-modal-header {
+	background-color: var(--card-background);
+	border-bottom: 1px solid var(--border-color);
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.custom-modal-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.custom-modal-close {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	color: var(--text-muted);
+	cursor: pointer;
+	padding: 0;
+	line-height: 1;
+}
+
+.custom-modal-close:hover {
+	color: var(--text-color);
+}
+
+.custom-modal-body {
+	padding: 1.5rem;
+	font-size: 0.9rem;
+	color: var(--text-color);
+}
+
+.custom-modal-footer {
+	border-top: 1px solid var(--border-color);
+	padding: 1rem;
+	background-color: var(--card-background);
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+.custom-modal-footer .btn {
+	padding: 0.5rem 1rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {from { opacity:0;
+	transform: translateY(-20px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+
+/* Responsive Adjustments */
+@media ( max-width : 767px) {
+	.admin-contact-messages, .admin-message-detail {
+		padding: 16px;
+	}
+	.admin-contact-messages h1, .admin-message-detail h1 {
+		font-size: 1.5rem;
+	}
+	.table th, .table td {
+		padding: 0.75rem;
+		font-size: 0.8rem;
+	}
+	.action-buttons {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+	.admin-message-detail .card-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+	.admin-message-detail .action-buttons {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.admin-message-detail .action-buttons .btn {
+		flex: 1;
+		text-align: center;
+	}
+	.admin-message-detail .row {
+		flex-direction: column;
+	}
+	.admin-message-detail .col-md-6 {
+		width: 100%;
+		margin-bottom: 1.5rem;
+	}
+	.pagination {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.page-link {
+		padding: 0.375rem 0.75rem;
+		font-size: 0.8rem;
+	}
+}
+
+@media ( max-width : 576px) {
+	.table th, .table td {
+		font-size: 0.75rem;
+	}
+	.btn, .btn-sm {
+		font-size: 0.75rem;
+		padding: 0.375rem 0.75rem;
+	}
+	.custom-modal-content {
+		width: 95%;
+	}
+	.custom-modal-title {
+		font-size: 1.1rem;
+	}
+	.custom-modal-body {
+		font-size: 0.85rem;
+	}
+	.custom-modal-footer .btn {
+		padding: 0.375rem 0.75rem;
+		font-size: 0.8rem;
+	}
+	.reply-section textarea {
+		min-height: 100px;
+	}
+}
+
+/* Flexbox for Row and Column Layout */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.col-md-6 {
+	flex: 0 0 50%;
+	max-width: 50%;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+
+/* Flexbox for Card Header */
+.d-flex {
+	display: flex;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+/* Margin Top Utility */
+.mt-4 {
+	margin-top: 1.5rem;
+}

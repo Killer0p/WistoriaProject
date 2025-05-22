@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    max-width: 900px;
+    width: 90%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.svg-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 2rem;
+}
+
+.svg-section svg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.form-section {
+    flex: 1;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.success {
+    background-color: #e0f8ec;
+    color: #2e7d32;
+    border-left: 5px solid #2e7d32;
+}
+
+.error {
+    background-color: #fbeaea;
+    color: #c0392b;
+    border-left: 5px solid #c0392b;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+}
+
+.nav-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.nav-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Smaller screens: Hide SVG, show form only */
+@media (max-width: 768px) {
+    .login-container {
+        display: block;
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .svg-section {
+        display: none;
+    }
+
+    .form-section {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Mobile: Full-page form */
+@media (max-width: 550px) {
+    .login-container {
+        width: 100%;
+        min-height: calc(100vh - 60px); /* Adjust for header height */
+        margin: 0;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-section {
+        padding: 2rem 1rem;
+        width: 100%;
+    }
+}
